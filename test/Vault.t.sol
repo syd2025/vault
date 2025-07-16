@@ -9,12 +9,12 @@ import "../src/common/ERC20.sol";
 contract VaultTest is Test {
     ERC20 token;
     Vault vault;
-    
+
     address user0;
     address user1;
 
-    function setUp() public{
-        token = new ERC20("MyToken","MTK");
+    function setUp() public {
+        token = new ERC20("MyToken", "MTK");
         vault = new Vault(address(token));
 
         user0 = address(1);
@@ -24,7 +24,7 @@ contract VaultTest is Test {
         token.mint(user0, 200 ether);
         token.mint(user1, 200 ether);
 
-        vm.prank(user0);  
+        vm.prank(user0);
         token.approve(address(vault), UINT256_MAX);
         vm.prank(user1);
         token.approve(address(vault), UINT256_MAX);
