@@ -1,19 +1,43 @@
-## Foundry
+## 金库合约
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+**实现了一个简单的金库合约，可以存币和取币，并且可以按照存储代币的比例进行取币。**
 
-Foundry consists of:
+金库合约的组成部分:
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+-   **ERC20**: 本合约集成了ERC20的相关方法,通过IERC20接口调用.
+-   **depoist**: 存币方法.
+-   **withdraw**: 取币方法.
 
 ## Documentation
 
-https://book.getfoundry.sh/
+https://github.com/syd2025/vault
 
-## Usage
+## Need to know
+
+存币计算方式：
+
+A - Amount to deposit
+
+B - Balance of vault before deposit
+
+S - Shares to mint
+
+T - Total shares before mint
+
+- (A + B)/B = (S+T)/T => S = A * T / B
+
+---
+取币计算方式：
+A - Amount to withdraw
+
+B = Balance of vault before withdraw
+
+S = Shares to burn
+
+T = Total shares before burn
+
+- (B - A)/B = (T - S)/T => A = B * S / T
+
 
 ### Build
 
