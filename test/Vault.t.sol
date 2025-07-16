@@ -13,7 +13,7 @@ contract VaultTest is Test {
     address user0;
     address user1;
 
-    function setUp() public {
+    constructor() {
         token = new ERC20("MyToken", "MTK");
         vault = new Vault(address(token));
 

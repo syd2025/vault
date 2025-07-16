@@ -48,7 +48,7 @@ contract Vault {
          * A: withdraw amount 需要计算的值
          *     B: balance of token before withdraw (token.balanceOf(account))
          *     T: total supply (totalSupply)
-         *     S: shares to burn (_shares), 
+         *     S: shares to burn (_shares),
          *     (T-S)/ T = (A - B) / B
          *     A = SB / T
          */
